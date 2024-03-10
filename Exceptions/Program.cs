@@ -109,6 +109,17 @@ using System.Diagnostics.SymbolStore;
 
 //Login ucun custom exception yazib isdifade etmek. Eger email ve yaxud password sehvdirse custom exception istifade edin. Models, Services, Controller folderleriniz olacaq.
 //Service mentiqi ile yazirsiz.
-UserController userController = new UserController();
-userController.Handlelogin("test@example.com", "password123");
-userController.Handlelogin("invalid@example.com", "invalidpassword");
+//UserController userController = new UserController();
+//userController.Handlelogin("test@example.com", "password123");
+//userController.Handlelogin("invalid@example.com", "invalidpassword");
+
+Login login=new Login();
+try
+{
+	login.CheckPassword("12345");
+}
+catch (PasswordLengthException ex)
+{
+
+    Console.WriteLine(ex.Message);
+}
