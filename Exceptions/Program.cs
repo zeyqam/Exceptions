@@ -1,6 +1,7 @@
 ﻿//exceptions -istisna demekdir,mueyyen sehvler
 //exceptions-bir classdir,2 yere bolunur-system ve application
 
+using Exceptions.Controllers;
 using Exceptions.Helpers.Exceptions;
 using Exceptions.Models;
 using System.Data;
@@ -93,16 +94,21 @@ using System.Diagnostics.SymbolStore;
 
 
 //Ededin faktorilalini tapan method yazmaq. Eger menfi eded daxil edilibse custom exception cixarsin.
-try
-{
-	int number = -5;
-	int factorial=FactorialCalculator.CalculateFactorial(number);
-    Console.WriteLine($"Factorial: {factorial}");
+//try
+//{
+//	int number = -5;
+//	int factorial=FactorialCalculator.CalculateFactorial(number);
+//    Console.WriteLine($"Factorial: {factorial}");
 
-}
-catch (NegativNumberException ex)
-{
+//}
+//catch (NegativNumberException ex)
+//{
 
-    Console.WriteLine($"Xeta : {ex.Message}");
-}
+//    Console.WriteLine($"Xeta : {ex.Message}");
+//}
 
+//Login ucun custom exception yazib isdifade etmek. Eger email ve yaxud password sehvdirse custom exception istifade edin. Models, Services, Controller folderleriniz olacaq.
+//Service mentiqi ile yazirsiz.
+UserController userController = new UserController();
+userController.Handlelogin("test@example.com", "password123");
+userController.Handlelogin("invalid@example.com", "invalidpassword");
