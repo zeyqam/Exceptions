@@ -20,7 +20,7 @@ namespace Exceptions.Models
                 return 1;
             }
             int factorial = 1;
-            for(int i = 0; i < number; i++)
+            for(int i = 2; i <= number; i++)
             {
                 factorial *= i;
             }
